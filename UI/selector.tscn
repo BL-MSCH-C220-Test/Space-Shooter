@@ -1,0 +1,74 @@
+[gd_scene load_steps=6 format=3 uid="uid://c72wyd0foia6f"]
+
+[ext_resource type="FontFile" uid="uid://dor6minlmw2gt" path="res://Assets/Hyperspace.otf" id="1_q4gej"]
+[ext_resource type="Script" path="res://UI/selector.gd" id="1_qo7pl"]
+[ext_resource type="Texture2D" uid="uid://b5kw8cch3vl77" path="res://Assets/ship_B.png" id="2_3pyiu"]
+[ext_resource type="Texture2D" uid="uid://rw02fiwg0t2j" path="res://Assets/ship_G.png" id="3_t8pud"]
+[ext_resource type="Texture2D" uid="uid://byi33kehao7nb" path="res://Assets/ship_C.png" id="4_3xwat"]
+
+[node name="Selector" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_qo7pl")
+
+[node name="Label" type="Label" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_bottom = -248.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_fonts/font = ExtResource("1_q4gej")
+theme_override_font_sizes/font_size = 80
+text = "Select your ship"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="ShipB" type="TextureButton" parent="."]
+layout_mode = 1
+anchors_preset = 2
+anchor_top = 1.0
+anchor_bottom = 1.0
+offset_top = -200.0
+offset_right = 200.0
+grow_vertical = 0
+texture_normal = ExtResource("2_3pyiu")
+stretch_mode = 3
+
+[node name="ShipG" type="TextureButton" parent="."]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -100.0
+offset_top = -200.0
+offset_right = 100.0
+grow_horizontal = 2
+grow_vertical = 0
+texture_normal = ExtResource("3_t8pud")
+stretch_mode = 3
+
+[node name="ShipC" type="TextureButton" parent="."]
+layout_mode = 1
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -200.0
+offset_top = -200.0
+grow_horizontal = 0
+grow_vertical = 0
+texture_normal = ExtResource("4_3xwat")
+stretch_mode = 3
+
+[connection signal="pressed" from="ShipB" to="." method="_on_ship_b_pressed"]
+[connection signal="pressed" from="ShipG" to="." method="_on_ship_g_pressed"]
+[connection signal="pressed" from="ShipC" to="." method="_on_ship_c_pressed"]

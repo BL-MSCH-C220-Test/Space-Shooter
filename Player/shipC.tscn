@@ -1,0 +1,27 @@
+[gd_scene load_steps=4 format=3 uid="uid://dw146srk3hbce"]
+
+[ext_resource type="Script" path="res://Player/shipC.gd" id="1_0r4qy"]
+[ext_resource type="Texture2D" uid="uid://m87qbcwq3yds" path="res://Assets/Exhaust.png" id="2_qfa7j"]
+[ext_resource type="Texture2D" uid="uid://byi33kehao7nb" path="res://Assets/ship_C.png" id="3_dtka8"]
+
+[node name="Player" type="CharacterBody2D"]
+script = ExtResource("1_0r4qy")
+metadata/_edit_group_ = true
+
+[node name="Exhaust" type="Sprite2D" parent="."]
+visible = false
+position = Vector2(2.08165e-12, 40)
+texture = ExtResource("2_qfa7j")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("3_dtka8")
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="."]
+polygon = PackedVector2Array(28, -2.1, 28, 18, 25.5, 18, 19, 21.2, 19, 18.5, -1.2, 13.5, -20.7, 20, -24.8, 20, -28, 16.8, -28, -2.1, -3, -18.1, -3, -19.2, -0.9, -20.3)
+
+[node name="Area2D" type="Area2D" parent="."]
+
+[node name="CollisionPolygon2D2" type="CollisionPolygon2D" parent="Area2D"]
+polygon = PackedVector2Array(1, -22, 31, -2, 31, 19, 19, 23, -1, 16, -22, 22, -27, 21, -30, 15, -30, -4)
+
+[connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]

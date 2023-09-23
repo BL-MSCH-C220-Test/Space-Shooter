@@ -1,13 +1,12 @@
-[gd_scene load_steps=9 format=3 uid="uid://b8pj1k6pnvasu"]
+[gd_scene load_steps=8 format=3 uid="uid://b8pj1k6pnvasu"]
 
-[ext_resource type="PackedScene" uid="uid://dk3xvsfpal7aa" path="res://Player/player.tscn" id="1_2bkwv"]
 [ext_resource type="Script" path="res://Player/Player_Container.gd" id="2_mmyai"]
 [ext_resource type="PackedScene" uid="uid://wyakgms8efjw" path="res://Asteroid/asteroid.tscn" id="2_sbeua"]
 [ext_resource type="PackedScene" uid="uid://dytxivpnbs2kg" path="res://Enemy/enemy.tscn" id="3_bniik"]
 [ext_resource type="Script" path="res://UI/HUD.gd" id="5_7h0dh"]
-[ext_resource type="FontFile" uid="uid://fsqrmghodxi" path="res://Assets/Hyperspace Bold.otf" id="5_odqm2"]
+[ext_resource type="FontFile" uid="uid://0ioaahixjqh1" path="res://Assets/Hyperspace Bold.otf" id="5_odqm2"]
 [ext_resource type="Script" path="res://UI/Menu.gd" id="7_7gsyq"]
-[ext_resource type="FontFile" uid="uid://by5mkqc0p1b65" path="res://Assets/Hyperspace.otf" id="8_ahgeu"]
+[ext_resource type="FontFile" uid="uid://dor6minlmw2gt" path="res://Assets/Hyperspace.otf" id="8_ahgeu"]
 
 [node name="Game" type="Node2D"]
 
@@ -23,9 +22,6 @@ position = Vector2(900, 600)
 
 [node name="Player_Container" type="Node2D" parent="."]
 script = ExtResource("2_mmyai")
-
-[node name="Player" parent="Player_Container" instance=ExtResource("1_2bkwv")]
-position = Vector2(576, 324)
 
 [node name="Enemy_Container" type="Node2D" parent="."]
 

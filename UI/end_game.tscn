@@ -1,8 +1,8 @@
 [gd_scene load_steps=4 format=3 uid="uid://70uflvbe83e1"]
 
 [ext_resource type="Script" path="res://UI/end_game.gd" id="1_xe4a5"]
-[ext_resource type="FontFile" uid="uid://by5mkqc0p1b65" path="res://Assets/Hyperspace.otf" id="2_nx57n"]
-[ext_resource type="FontFile" uid="uid://fsqrmghodxi" path="res://Assets/Hyperspace Bold.otf" id="3_wm3m4"]
+[ext_resource type="FontFile" uid="uid://dor6minlmw2gt" path="res://Assets/Hyperspace.otf" id="2_nx57n"]
+[ext_resource type="FontFile" uid="uid://0ioaahixjqh1" path="res://Assets/Hyperspace Bold.otf" id="3_wm3m4"]
 
 [node name="End_Game" type="Control"]
 layout_mode = 3
