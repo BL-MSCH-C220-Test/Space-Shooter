@@ -1,15 +1,247 @@
-[gd_scene load_steps=9 format=3 uid="uid://b8pj1k6pnvasu"]
+[gd_scene load_steps=62 format=3 uid="uid://b8pj1k6pnvasu"]
 
 [ext_resource type="PackedScene" uid="uid://dk3xvsfpal7aa" path="res://Player/player.tscn" id="1_2bkwv"]
+[ext_resource type="Texture2D" uid="uid://t0daswhput3" path="res://Assets/PIA25726.jpg" id="1_fwt08"]
+[ext_resource type="Texture2D" uid="uid://ceeax6srgqtq" path="res://Assets/starfield_01.png" id="1_yg00c"]
+[ext_resource type="Texture2D" uid="uid://62x2kfhvps5p" path="res://Assets/starfield_02.png" id="2_loo4s"]
 [ext_resource type="Script" path="res://Player/Player_Container.gd" id="2_mmyai"]
 [ext_resource type="PackedScene" uid="uid://wyakgms8efjw" path="res://Asteroid/asteroid.tscn" id="2_sbeua"]
 [ext_resource type="PackedScene" uid="uid://dytxivpnbs2kg" path="res://Enemy/enemy.tscn" id="3_bniik"]
+[ext_resource type="Texture2D" uid="uid://co204yq7sxvxa" path="res://Assets/starfield_03.png" id="3_cv7b0"]
+[ext_resource type="Texture2D" uid="uid://b04ht6ca4c4qd" path="res://Assets/starfield_04.png" id="4_7tant"]
 [ext_resource type="Script" path="res://UI/HUD.gd" id="5_7h0dh"]
+[ext_resource type="Texture2D" uid="uid://2k6t0y2frp2x" path="res://Assets/starfield_05.png" id="5_d43pu"]
 [ext_resource type="FontFile" uid="uid://fsqrmghodxi" path="res://Assets/Hyperspace Bold.otf" id="5_odqm2"]
+[ext_resource type="Texture2D" uid="uid://jtl2n4y4igue" path="res://Assets/starfield_06.png" id="6_cqs6f"]
+[ext_resource type="Texture2D" uid="uid://bv8ijqd8cwau3" path="res://Assets/starfield_07.png" id="7_2o52b"]
 [ext_resource type="Script" path="res://UI/Menu.gd" id="7_7gsyq"]
 [ext_resource type="FontFile" uid="uid://by5mkqc0p1b65" path="res://Assets/Hyperspace.otf" id="8_ahgeu"]
+[ext_resource type="Texture2D" uid="uid://bftsyc50irehp" path="res://Assets/starfield_08.png" id="8_y0rey"]
+[ext_resource type="Texture2D" uid="uid://cj2d0vq3xld73" path="res://Assets/starfield_09.png" id="9_kybqs"]
+[ext_resource type="Texture2D" uid="uid://ded27xmfmty0d" path="res://Assets/starfield_10.png" id="10_le5fj"]
+[ext_resource type="Texture2D" uid="uid://bydhafjnqq4cx" path="res://Assets/starfield_11.png" id="11_h134j"]
+[ext_resource type="Texture2D" uid="uid://bogewqhbdw357" path="res://Assets/starfield_12.png" id="12_1kx68"]
+[ext_resource type="Texture2D" uid="uid://bjgb7ipr6r1kt" path="res://Assets/starfield_13.png" id="13_qpbn4"]
+[ext_resource type="Texture2D" uid="uid://c60diyqk3wkmw" path="res://Assets/starfield_14.png" id="14_rb6s6"]
+[ext_resource type="Texture2D" uid="uid://dv8faleyfj7fm" path="res://Assets/starfield_15.png" id="15_u1put"]
+[ext_resource type="Texture2D" uid="uid://c8rnwiiih2a18" path="res://Assets/starfield_16.png" id="16_ib2dd"]
+[ext_resource type="Texture2D" uid="uid://tsnjvpkj38ng" path="res://Assets/starfield_17.png" id="17_1txdb"]
+[ext_resource type="Texture2D" uid="uid://byhejvpit21x3" path="res://Assets/starfield_18.png" id="18_dewgn"]
+[ext_resource type="Texture2D" uid="uid://do6ina6w8ypwe" path="res://Assets/starfield_19.png" id="19_a0uef"]
+[ext_resource type="Texture2D" uid="uid://cgkgbyfdm37i2" path="res://Assets/starfield_20.png" id="20_yn7ve"]
+[ext_resource type="Texture2D" uid="uid://c8fum4yq7jqe7" path="res://Assets/starfield_21.png" id="21_4y3iy"]
+[ext_resource type="Texture2D" uid="uid://bdcyfiqjyds1" path="res://Assets/starfield_22.png" id="22_t3oda"]
+[ext_resource type="Texture2D" uid="uid://cv3ffklhd0pfn" path="res://Assets/starfield_23.png" id="23_ycc75"]
+[ext_resource type="Texture2D" uid="uid://dp57a3rnrqnnx" path="res://Assets/starfield_24.png" id="24_8exdt"]
+[ext_resource type="Texture2D" uid="uid://bq31jkvvcsskv" path="res://Assets/starfield_25.png" id="25_wo03h"]
+[ext_resource type="Texture2D" uid="uid://c1i8kaj1yst2j" path="res://Assets/starfield_26.png" id="26_ueg3y"]
+[ext_resource type="Texture2D" uid="uid://cs0poe5bovn0" path="res://Assets/starfield_27.png" id="27_ehlwo"]
+[ext_resource type="Texture2D" uid="uid://d16vto52yx0j1" path="res://Assets/starfield_28.png" id="28_mo1f3"]
+[ext_resource type="Texture2D" uid="uid://bxmjevb6a8sa4" path="res://Assets/starfield_29.png" id="29_fqo4k"]
+[ext_resource type="Texture2D" uid="uid://b1cmd070gpu23" path="res://Assets/starfield_30.png" id="30_xje4m"]
+[ext_resource type="Texture2D" uid="uid://b3of1ybymxogw" path="res://Assets/starfield_31.png" id="31_wom1u"]
+[ext_resource type="Texture2D" uid="uid://bhwb0nnqalthl" path="res://Assets/starfield_32.png" id="32_1bh0h"]
+[ext_resource type="Texture2D" uid="uid://cmcipm7n6p274" path="res://Assets/starfield_33.png" id="33_k0yjb"]
+[ext_resource type="Texture2D" uid="uid://c3x8nwuupvuxu" path="res://Assets/starfield_34.png" id="34_vb1pp"]
+[ext_resource type="Texture2D" uid="uid://cbvf20ov1fmls" path="res://Assets/starfield_35.png" id="35_y75vg"]
+[ext_resource type="Texture2D" uid="uid://diac35usq7gga" path="res://Assets/starfield_36.png" id="36_d01x1"]
+[ext_resource type="Texture2D" uid="uid://csh37rn3uv56u" path="res://Assets/starfield_37.png" id="37_m3ci3"]
+[ext_resource type="Texture2D" uid="uid://cs0uv8fukk3eo" path="res://Assets/starfield_38.png" id="38_7u006"]
+[ext_resource type="Texture2D" uid="uid://dbvxk0rjcx11q" path="res://Assets/starfield_39.png" id="39_sdvxc"]
+[ext_resource type="Texture2D" uid="uid://bent3jp0y6js" path="res://Assets/starfield_40.png" id="40_s45st"]
+[ext_resource type="Texture2D" uid="uid://b2jck13amk6eg" path="res://Assets/starfield_41.png" id="41_3t3ut"]
+[ext_resource type="Texture2D" uid="uid://v84638iw7tud" path="res://Assets/starfield_42.png" id="42_rwnsp"]
+[ext_resource type="Texture2D" uid="uid://d01v4c417k2i5" path="res://Assets/starfield_43.png" id="43_qxnj5"]
+[ext_resource type="Texture2D" uid="uid://bvbbksg8e3jpr" path="res://Assets/starfield_44.png" id="44_16cal"]
+[ext_resource type="Texture2D" uid="uid://dgmhr0q5foy6j" path="res://Assets/starfield_45.png" id="45_yb8mj"]
+[ext_resource type="Texture2D" uid="uid://b1qs7cgvix3ar" path="res://Assets/starfield_46.png" id="46_nwacs"]
+[ext_resource type="Texture2D" uid="uid://1m5qnsqwfl5t" path="res://Assets/starfield_47.png" id="47_h4a6i"]
+[ext_resource type="Texture2D" uid="uid://df8cfbykv2b0j" path="res://Assets/starfield_48.png" id="48_61q6j"]
+[ext_resource type="Texture2D" uid="uid://dgvbbr0y0eodn" path="res://Assets/starfield_49.png" id="49_dm03o"]
+[ext_resource type="Texture2D" uid="uid://c4osaoksulr2w" path="res://Assets/starfield_50.png" id="50_btbs4"]
+[ext_resource type="VideoStream" path="res://Assets/stars.ogv" id="52_fh5x5"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_alwur"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_yg00c")
+}, {
+"duration": 1.0,
+"texture": ExtResource("2_loo4s")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_cv7b0")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_7tant")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_d43pu")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_cqs6f")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7_2o52b")
+}, {
+"duration": 1.0,
+"texture": ExtResource("8_y0rey")
+}, {
+"duration": 1.0,
+"texture": ExtResource("9_kybqs")
+}, {
+"duration": 1.0,
+"texture": ExtResource("10_le5fj")
+}, {
+"duration": 1.0,
+"texture": ExtResource("11_h134j")
+}, {
+"duration": 1.0,
+"texture": ExtResource("12_1kx68")
+}, {
+"duration": 1.0,
+"texture": ExtResource("13_qpbn4")
+}, {
+"duration": 1.0,
+"texture": ExtResource("14_rb6s6")
+}, {
+"duration": 1.0,
+"texture": ExtResource("15_u1put")
+}, {
+"duration": 1.0,
+"texture": ExtResource("16_ib2dd")
+}, {
+"duration": 1.0,
+"texture": ExtResource("17_1txdb")
+}, {
+"duration": 1.0,
+"texture": ExtResource("18_dewgn")
+}, {
+"duration": 1.0,
+"texture": ExtResource("19_a0uef")
+}, {
+"duration": 1.0,
+"texture": ExtResource("20_yn7ve")
+}, {
+"duration": 1.0,
+"texture": ExtResource("21_4y3iy")
+}, {
+"duration": 1.0,
+"texture": ExtResource("22_t3oda")
+}, {
+"duration": 1.0,
+"texture": ExtResource("23_ycc75")
+}, {
+"duration": 1.0,
+"texture": ExtResource("24_8exdt")
+}, {
+"duration": 1.0,
+"texture": ExtResource("25_wo03h")
+}, {
+"duration": 1.0,
+"texture": ExtResource("26_ueg3y")
+}, {
+"duration": 1.0,
+"texture": ExtResource("27_ehlwo")
+}, {
+"duration": 1.0,
+"texture": ExtResource("28_mo1f3")
+}, {
+"duration": 1.0,
+"texture": ExtResource("29_fqo4k")
+}, {
+"duration": 1.0,
+"texture": ExtResource("30_xje4m")
+}, {
+"duration": 1.0,
+"texture": ExtResource("31_wom1u")
+}, {
+"duration": 1.0,
+"texture": ExtResource("32_1bh0h")
+}, {
+"duration": 1.0,
+"texture": ExtResource("33_k0yjb")
+}, {
+"duration": 1.0,
+"texture": ExtResource("34_vb1pp")
+}, {
+"duration": 1.0,
+"texture": ExtResource("35_y75vg")
+}, {
+"duration": 1.0,
+"texture": ExtResource("36_d01x1")
+}, {
+"duration": 1.0,
+"texture": ExtResource("37_m3ci3")
+}, {
+"duration": 1.0,
+"texture": ExtResource("38_7u006")
+}, {
+"duration": 1.0,
+"texture": ExtResource("39_sdvxc")
+}, {
+"duration": 1.0,
+"texture": ExtResource("40_s45st")
+}, {
+"duration": 1.0,
+"texture": ExtResource("41_3t3ut")
+}, {
+"duration": 1.0,
+"texture": ExtResource("42_rwnsp")
+}, {
+"duration": 1.0,
+"texture": ExtResource("43_qxnj5")
+}, {
+"duration": 1.0,
+"texture": ExtResource("44_16cal")
+}, {
+"duration": 1.0,
+"texture": ExtResource("45_yb8mj")
+}, {
+"duration": 1.0,
+"texture": ExtResource("46_nwacs")
+}, {
+"duration": 1.0,
+"texture": ExtResource("47_h4a6i")
+}, {
+"duration": 1.0,
+"texture": ExtResource("48_61q6j")
+}, {
+"duration": 1.0,
+"texture": ExtResource("49_dm03o")
+}, {
+"duration": 1.0,
+"texture": ExtResource("50_btbs4")
+}],
+"loop": true,
+"name": &"default",
+"speed": 40.0
+}]
 
 [node name="Game" type="Node2D"]
+
+[node name="Background_Image" type="Sprite2D" parent="."]
+visible = false
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("1_fwt08")
+centered = false
+
+[node name="Background_Animation" type="AnimatedSprite2D" parent="."]
+visible = false
+scale = Vector2(2.31786, 2.31786)
+sprite_frames = SubResource("SpriteFrames_alwur")
+autoplay = "default"
+frame_progress = 0.873725
+centered = false
+
+[node name="VideoStreamPlayer" type="VideoStreamPlayer" parent="."]
+offset_left = -1154.0
+offset_top = -617.0
+offset_right = 2686.0
+offset_bottom = 1543.0
+stream = ExtResource("52_fh5x5")
+autoplay = true
 
 [node name="Asteroid_Container" type="Node2D" parent="."]
 
