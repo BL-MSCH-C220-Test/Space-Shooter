@@ -9,6 +9,7 @@ func _ready():
 	update_score()
 	update_time()
 	update_lives()
+	update_nuke()
 
 
 func update_score():
@@ -16,6 +17,9 @@ func update_score():
 
 func update_time():
 	$Time.text = "Time: " + str(Global.time)
+
+func update_nuke():
+	$Nuke.text = "Nuke: " + str(Global.nuke)
 
 func update_lives():
 	lives_pos = Vector2(20, Global.VP.y - 20)
