@@ -24,4 +24,12 @@ polygon = PackedVector2Array(5, -25.2, 5, -22.5, 28.3, 17, 27.2, 19, 25.9, 19, 1
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Area2D"]
 polygon = PackedVector2Array(0, -37, -36, 16, -22, 36, 0, 27, 18, 37, 35, 20)
 
+[node name="Camera2D" type="Camera2D" parent="."]
+limit_left = 0
+limit_top = 0
+limit_right = 3168
+limit_bottom = 1600
+drag_horizontal_enabled = true
+drag_vertical_enabled = true
+
 [connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]

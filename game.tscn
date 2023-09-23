@@ -1,6 +1,7 @@
-[gd_scene load_steps=9 format=3 uid="uid://b8pj1k6pnvasu"]
+[gd_scene load_steps=10 format=3 uid="uid://b8pj1k6pnvasu"]
 
 [ext_resource type="PackedScene" uid="uid://dk3xvsfpal7aa" path="res://Player/player.tscn" id="1_2bkwv"]
+[ext_resource type="Texture2D" uid="uid://t0daswhput3" path="res://Assets/PIA25726.jpg" id="1_e18k3"]
 [ext_resource type="Script" path="res://Player/Player_Container.gd" id="2_mmyai"]
 [ext_resource type="PackedScene" uid="uid://wyakgms8efjw" path="res://Asteroid/asteroid.tscn" id="2_sbeua"]
 [ext_resource type="PackedScene" uid="uid://dytxivpnbs2kg" path="res://Enemy/enemy.tscn" id="3_bniik"]
@@ -10,6 +11,10 @@
 [ext_resource type="FontFile" uid="uid://by5mkqc0p1b65" path="res://Assets/Hyperspace.otf" id="8_ahgeu"]
 
 [node name="Game" type="Node2D"]
+
+[node name="Background" type="Sprite2D" parent="."]
+texture = ExtResource("1_e18k3")
+centered = false
 
 [node name="Asteroid_Container" type="Node2D" parent="."]
 
