@@ -1,0 +1,22 @@
+[gd_scene load_steps=3 format=3 uid="uid://bink54op1v4qx"]
+
+[ext_resource type="Script" path="res://Upgrades/Upgrade_Weapon.gd" id="1_oegoy"]
+[ext_resource type="Texture2D" uid="uid://d3u2u4i3r34r7" path="res://Assets/icon_plusSmall.png" id="2_447tk"]
+
+[node name="Upgrade_Weapon" type="Area2D"]
+modulate = Color(0.490196, 0.737255, 1, 1)
+script = ExtResource("1_oegoy")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("2_447tk")
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="."]
+polygon = PackedVector2Array(7, -18.1, 16, -13.2, 16, -10.8, 20, -6.8, 20, 8, 17.9, 8, 6.9, 20, -6.7, 20, -17, 12, -17, 9.8, -20, 6.8, -20, -8, -18.1, -8, -12.1, -17, -9.5, -17, -7, -18.2, -7, -20, 7, -20)
+
+[node name="Timer" type="Timer" parent="."]
+wait_time = 3.0
+one_shot = true
+autostart = true
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

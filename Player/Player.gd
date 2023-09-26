@@ -6,6 +6,7 @@ var max_speed = 400
 var rotate_speed = 0.08
 var nose = Vector2(0,-60)
 var health = 10
+var weapon = 1
 var Bullet = load("res://Player/bullet.tscn")
 var Effects = null
 var Explosion = load("res://Effects/explosion.tscn")
@@ -23,6 +24,14 @@ func get_input():
 	return to_return.rotated(rotation)
 
 func _physics_process(_delta):
+	if health > 10:
+		$Sprite2D.modulate.h = 0.81
+	elif health > 5:
+		$Sprite2D.modulate.h = 0.33
+	elif health > 1:
+		$Sprite2D.modulate.h = 0.14
+	else:
+		$Sprite2D.modulate.h = 0.0
 	velocity += get_input()*speed
 	velocity = velocity.normalized() * clamp(velocity.length(), 0, max_speed)
 	
@@ -33,12 +42,23 @@ func _physics_process(_delta):
 	move_and_slide()
 	
 	if Input.is_action_just_pressed("Shoot"):
-		var bullet = Bullet.instantiate()
-		bullet.position = position + nose.rotated(rotation)
-		bullet.rotation = rotation
-		var Effects = get_node_or_null("/root/Game/Effects")
-		if Effects != null:
-			Effects.add_child(bullet)
+		for w in range(weapon):
+			var weapon_position = nose
+			if weapon > 1:
+				if w == 1:
+					weapon_position = nose + Vector2(-30,-4)
+				elif w == 2:
+					weapon_position = nose + Vector2(40,-4)
+			var bullet = Bullet.instantiate()
+			bullet.position = position + weapon_position.rotated(rotation)
+			bullet.rotation = rotation
+			var Effects = get_node_or_null("/root/Game/Effects")
+			if Effects != null:
+				Effects.add_child(bullet)
+	
+	if Input.is_action_just_pressed("Shoot2"):
+		for w in $Weapons.get_children():
+			w.shoot(nose, global_position, rotation)
 
 func damage(d):
 	health -= d
@@ -52,6 +72,11 @@ func damage(d):
 			await explosion.animation_finished
 		Global.update_lives(-1)
 		queue_free()
+
+func add_weapon(w):
+	w.position = Vector2.ZERO
+	$Weapons.add_child(w)
+	
 
 func _on_area_2d_body_entered(body):
 	if body.name != "Player":

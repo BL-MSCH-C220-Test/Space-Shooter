@@ -11,6 +11,20 @@ func _ready():
 	update_lives()
 
 
+func _physics_process(_delta):
+	var Player = get_node_or_null("/root/Game/Player_Container/Player")
+	if Player == null:
+		$Health.hide()
+		$Health2.hide()
+	else:
+		$Health.show()
+		#$Health2.show()
+		$Health.global_position = Player.global_position + Vector2(-15,-70)
+		$Health.text = str(Player.health)
+		#$Health2.global_position = Player.global_position + Vector2(-50,-60)
+		#$Health2.value = clamp(Player.health*100/10,0,100)
+
+
 func update_score():
 	$Score.text = "Score: " + str(Global.score)
 

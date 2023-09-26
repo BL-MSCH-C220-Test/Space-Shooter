@@ -1,0 +1,21 @@
+[gd_scene load_steps=3 format=3 uid="uid://dmcs3pxqst16t"]
+
+[ext_resource type="Script" path="res://Upgrades/Upgrade.gd" id="1_dtyld"]
+[ext_resource type="Texture2D" uid="uid://d3u2u4i3r34r7" path="res://Assets/icon_plusSmall.png" id="2_1duat"]
+
+[node name="Upgrade" type="Area2D"]
+script = ExtResource("1_dtyld")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("2_1duat")
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="."]
+polygon = PackedVector2Array(7, -18.1, 16, -13.2, 16, -10.8, 20, -6.8, 20, 8, 17.9, 8, 6.9, 20, -6.7, 20, -17, 12, -17, 9.8, -20, 6.8, -20, -8, -18.1, -8, -12.1, -17, -9.5, -17, -7, -18.2, -7, -20, 7, -20)
+
+[node name="Timer" type="Timer" parent="."]
+wait_time = 5.0
+one_shot = true
+autostart = true
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

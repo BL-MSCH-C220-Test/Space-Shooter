@@ -1,11 +1,13 @@
-[gd_scene load_steps=9 format=3 uid="uid://b8pj1k6pnvasu"]
+[gd_scene load_steps=11 format=3 uid="uid://b8pj1k6pnvasu"]
 
 [ext_resource type="PackedScene" uid="uid://dk3xvsfpal7aa" path="res://Player/player.tscn" id="1_2bkwv"]
 [ext_resource type="Script" path="res://Player/Player_Container.gd" id="2_mmyai"]
 [ext_resource type="PackedScene" uid="uid://wyakgms8efjw" path="res://Asteroid/asteroid.tscn" id="2_sbeua"]
-[ext_resource type="PackedScene" uid="uid://dytxivpnbs2kg" path="res://Enemy/enemy.tscn" id="3_bniik"]
+[ext_resource type="PackedScene" uid="uid://dmcs3pxqst16t" path="res://Upgrades/upgrade.tscn" id="4_tq67j"]
 [ext_resource type="Script" path="res://UI/HUD.gd" id="5_7h0dh"]
 [ext_resource type="FontFile" uid="uid://fsqrmghodxi" path="res://Assets/Hyperspace Bold.otf" id="5_odqm2"]
+[ext_resource type="PackedScene" uid="uid://bink54op1v4qx" path="res://Upgrades/upgrade_weapon.tscn" id="5_xgfym"]
+[ext_resource type="PackedScene" uid="uid://ccpcu0wsuy516" path="res://Upgrades/weapon_embedded.tscn" id="6_fc7dc"]
 [ext_resource type="Script" path="res://UI/Menu.gd" id="7_7gsyq"]
 [ext_resource type="FontFile" uid="uid://by5mkqc0p1b65" path="res://Assets/Hyperspace.otf" id="8_ahgeu"]
 
@@ -14,10 +16,6 @@
 [node name="Asteroid_Container" type="Node2D" parent="."]
 
 [node name="Asteroid" parent="Asteroid_Container" instance=ExtResource("2_sbeua")]
-position = Vector2(100, 100)
-
-[node name="Asteroid2" parent="Asteroid_Container" instance=ExtResource("2_sbeua")]
-position = Vector2(900, 600)
 
 [node name="Effects" type="Node2D" parent="."]
 
@@ -29,8 +27,17 @@ position = Vector2(576, 324)
 
 [node name="Enemy_Container" type="Node2D" parent="."]
 
-[node name="Enemy" parent="Enemy_Container" instance=ExtResource("3_bniik")]
-position = Vector2(400, 100)
+[node name="Upgrade_Container" type="Node2D" parent="."]
+
+[node name="Upgrade" parent="Upgrade_Container" instance=ExtResource("4_tq67j")]
+modulate = Color(1, 0.458824, 0.458824, 1)
+position = Vector2(600, 600)
+
+[node name="Upgrade_Weapon" parent="Upgrade_Container" instance=ExtResource("5_xgfym")]
+position = Vector2(900, 100)
+
+[node name="Weapon_Embedded" parent="Upgrade_Container" instance=ExtResource("6_fc7dc")]
+position = Vector2(100, 200)
 
 [node name="UI" type="CanvasLayer" parent="."]
 
@@ -78,6 +85,20 @@ grow_vertical = 2
 
 [node name="Timer" type="Timer" parent="UI/HUD"]
 autostart = true
+
+[node name="Health" type="Label" parent="UI/HUD"]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Health2" type="ProgressBar" parent="UI/HUD"]
+layout_mode = 0
+offset_left = -100.0
+offset_top = -100.0
+offset_bottom = -80.0
+show_percentage = false
 
 [node name="Menu" type="Control" parent="UI"]
 process_mode = 3
