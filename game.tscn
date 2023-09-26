@@ -1,9 +1,8 @@
-[gd_scene load_steps=9 format=3 uid="uid://b8pj1k6pnvasu"]
+[gd_scene load_steps=8 format=3 uid="uid://b8pj1k6pnvasu"]
 
 [ext_resource type="PackedScene" uid="uid://dk3xvsfpal7aa" path="res://Player/player.tscn" id="1_2bkwv"]
 [ext_resource type="Script" path="res://Player/Player_Container.gd" id="2_mmyai"]
-[ext_resource type="PackedScene" uid="uid://wyakgms8efjw" path="res://Asteroid/asteroid.tscn" id="2_sbeua"]
-[ext_resource type="PackedScene" uid="uid://dytxivpnbs2kg" path="res://Enemy/enemy.tscn" id="3_bniik"]
+[ext_resource type="Script" path="res://Enemy/Enemy_Container.gd" id="3_08pgk"]
 [ext_resource type="Script" path="res://UI/HUD.gd" id="5_7h0dh"]
 [ext_resource type="FontFile" uid="uid://fsqrmghodxi" path="res://Assets/Hyperspace Bold.otf" id="5_odqm2"]
 [ext_resource type="Script" path="res://UI/Menu.gd" id="7_7gsyq"]
@@ -13,24 +12,20 @@
 
 [node name="Asteroid_Container" type="Node2D" parent="."]
 
-[node name="Asteroid" parent="Asteroid_Container" instance=ExtResource("2_sbeua")]
-position = Vector2(100, 100)
-
-[node name="Asteroid2" parent="Asteroid_Container" instance=ExtResource("2_sbeua")]
-position = Vector2(900, 600)
-
 [node name="Effects" type="Node2D" parent="."]
 
 [node name="Player_Container" type="Node2D" parent="."]
 script = ExtResource("2_mmyai")
 
 [node name="Player" parent="Player_Container" instance=ExtResource("1_2bkwv")]
-position = Vector2(576, 324)
+position = Vector2(500, 950)
 
 [node name="Enemy_Container" type="Node2D" parent="."]
+script = ExtResource("3_08pgk")
 
-[node name="Enemy" parent="Enemy_Container" instance=ExtResource("3_bniik")]
-position = Vector2(400, 100)
+[node name="Timer" type="Timer" parent="Enemy_Container"]
+wait_time = 2.0
+autostart = true
 
 [node name="UI" type="CanvasLayer" parent="."]
 
@@ -147,6 +142,7 @@ theme_override_fonts/font = ExtResource("5_odqm2")
 theme_override_font_sizes/font_size = 20
 text = "Quit"
 
+[connection signal="timeout" from="Enemy_Container/Timer" to="Enemy_Container" method="_on_timer_timeout"]
 [connection signal="timeout" from="UI/HUD/Timer" to="UI/HUD" method="_on_timer_timeout"]
 [connection signal="pressed" from="UI/Menu/Restart" to="UI/Menu" method="_on_restart_pressed"]
 [connection signal="pressed" from="UI/Menu/Quit" to="UI/Menu" method="_on_quit_pressed"]

@@ -23,14 +23,8 @@ func get_input():
 	return to_return.rotated(rotation)
 
 func _physics_process(_delta):
-	velocity += get_input()*speed
-	velocity = velocity.normalized() * clamp(velocity.length(), 0, max_speed)
+	position.x = clamp(get_viewport().get_mouse_position().x, 0, 1000)
 	
-	position.x = wrapf(position.x, 0, Global.VP.x)
-	position.y = wrapf(position.y, 0, Global.VP.y)
-	velocity = velocity.normalized() * clamp(velocity.length(), 0, max_speed)
-	
-	move_and_slide()
 	
 	if Input.is_action_just_pressed("Shoot"):
 		var bullet = Bullet.instantiate()
